@@ -3,6 +3,7 @@
 		<thead>
 			<tr class="active">
 				<th class="text-center" width="30px" style="padding-left: 20px;">No</th>
+				<th>Username</th>
 				<th>Nama</th>
 				<th>Email</th>
 				<th>Nomor HP</th>
@@ -15,6 +16,7 @@
             foreach ($persons as $person) { ?>
 				<tr>
 					<td class="text-center" text-align="center" vertical-align="middle" line-height="90px";><?= $no++ ?></td>
+					<td><?= $person->username ?></td>
 					<td><?= $person->name ?></td>
 					<td><?= $person->email ?></td>
 					<td><?= $person->phone ?></td>
@@ -26,7 +28,7 @@
 					?>					
 					<td class="text-center" width="160px" text-align="center" vertical-align="middle" line-height="90px"; style="padding-left: 20px;">
 
-					<?php echo anchor('admin/person/edit/' . $person->id, '<button type="button" class="btn btn-block btn-warning btn-xs" onClick=\'return confirm("are you sure you want to delete??");\'>Edit</button>'); ?> <br>
+					<?php echo anchor('admin/person/edit/' . $person->id, '<button type="button" class="btn btn-block btn-warning btn-xs">Edit</button>'); ?> <br>
 					<?php echo anchor('admin/person/delete/' . $person->id, '<button type="button" class="btn btn-block btn-danger btn-xs"onClick=\'return confirm("are you sure you want to delete??");\'>Delete</button>'); ?>
 
 					</td>
