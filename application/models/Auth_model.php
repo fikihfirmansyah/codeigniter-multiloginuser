@@ -22,9 +22,7 @@ class Auth_model extends CI_Model
 	public function get_by_id()
     {
         $id = $this->session->userdata('id');
-        $this->db->select('
-            tbl_user.*, tbl_role.id AS id_role, tbl_role.name, tbl_role.description,
-        ');
+        $this->db->select('tbl_user.*, tbl_role.id AS id_role, tbl_role.name AS role_name, tbl_role.description,');
         $this->db->join('tbl_role', 'tbl_user.id_role = tbl_role.id');
         $this->db->from($this->table);
         $this->db->where($this->id, $id);
@@ -37,8 +35,11 @@ class Auth_model extends CI_Model
     {
       date_default_timezone_set('ASIA/JAKARTA');
       $data = array(
+        'name' => $this->input->post('name'),
         'username' => $this->input->post('username'),
         'email' => $this->input->post('email'),
+        'phone' => $this->input->post('phone'),
+        'photo' =>  '1625761991343.jpg',
         'id_role' => '2',
         'created_at' => date('Y-m-d H:i:s'),
         'password' => get_hash($this->input->post('password'))

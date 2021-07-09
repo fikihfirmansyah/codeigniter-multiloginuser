@@ -28,16 +28,14 @@ class Person extends MY_Controller
 
     public function create()
     {
-        $first_name    = $this->input->post('first_name');
-        $last_name = $this->input->post('last_name');
+        $name    = $this->input->post('name');
         $email = $this->input->post('email');
         $phone = $this->input->post('phone');
         $photo = $this->input->post('photo');
         $activated = $this->input->post('activated');
 
         $data = [
-            'first_name'    => $first_name,
-            'last_name' => $last_name,
+            'name'    => $name,
             'email' => $email,
             'phone' => $phone,
             'photo' => $photo,
@@ -60,16 +58,14 @@ class Person extends MY_Controller
         $name    = $this->input->post('id_role');
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-        $first_name = $this->input->post('first_name');
-        $last_name = $this->input->post('last_name');
+        $name = $this->input->post('name');
         $email = $this->input->post('email');
         $phone = $this->input->post('phone');
         $photo = $this->input->post('photo');
         $activated = $this->input->post('activated');
 
         $data = [
-            'first_name'    => $first_name,
-            'last_name' => $last_name,
+            'name'    => $name,
             'email' => $email,
             'phone' => $phone,
             'photo' => $photo,

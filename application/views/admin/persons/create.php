@@ -3,7 +3,7 @@
 	<table>
 		<tr>
 			<td>Name</td>
-			<td><input type="text" name="first_name"></td>
+			<td><input type="text" name="name"></td>
 		</tr>
 		<tr>
 			<td>email</td>

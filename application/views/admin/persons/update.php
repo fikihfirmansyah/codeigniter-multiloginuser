@@ -1,11 +1,16 @@
 <?php echo anchor('admin/person', 'Back'); ?>
-<form action="<?= base_url('admin/person/update') ?>" method="post">
+<form action="<?= base_url('admin/person/update') ?>" method="post"><br>
 	<table>
-
+	<tr>
+		<div class="form-group">
+                    <label for="exampleInputName1">Username</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Masukkan Nama" name="username" value="<?= $person->username ?>">
+                  </div>
+		</tr>
 		<tr>
 		<div class="form-group">
                     <label for="exampleInputName1">Nama</label>
-                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Masukkan Nama" name="first_name" value="<?= $person->first_name ?>">
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Masukkan Nama" name="name" value="<?= $person->name ?>">
                   </div>
 		</tr>
 		<tr>

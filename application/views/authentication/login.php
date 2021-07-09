@@ -1,6 +1,7 @@
 <div class="login-box">
 	<div class="login-logo">
-		<a href="<?php echo base_url(); ?>"><b><?php echo $site['nama_website']?></b></a>
+	<img width="64" src="<?php echo base_url() ;?>/assets\uploads\images\<?php echo $site['logo']?>" /><br>
+	<a href="<?php echo base_url(); ?>"><b><?php echo $site['nama_website']?></b></a>
 	</div>
 	<!-- /.login-logo -->
 	<div class="login-box-body">

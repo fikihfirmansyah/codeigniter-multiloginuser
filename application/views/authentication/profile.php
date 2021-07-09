@@ -8,11 +8,9 @@
 			<div class="box-body box-profile">
 				<img class="profile-user-img img-responsive img-circle" src="<?= base_url('assets/uploads/images/foto_profil/'.$userdata->photo); ?>" style="width:125px; height:125px">
 
-				<h3 class="profile-username text-center"><?= $userdata->first_name; ?> <?= $userdata->last_name; ?></h3>
+				<h3 class="profile-username text-center"><?= $userdata->name; ?></h3>
 
-				<p class="text-muted text-center">
-					<?= $userdata->name;?>
-				</p>
+				<p class="text-muted text-center"><?= $userdata->role_name;?></p>
 
 				<ul class="list-group list-group-unbordered">
 					<li class="list-group-item" style="text-align:center">
@@ -45,15 +43,9 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label">Nama Depan</label>
+							<label class="col-sm-2 control-label">Nama Lengkap</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" placeholder="Nama Depan" name="first_name" value="<?= $userdata->first_name; ?>">
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-2 control-label">Nama Belakang</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" placeholder="Nama Belakang" name="last_name" value="<?= $userdata->last_name; ?>">
+								<input type="text" class="form-control" placeholder="Nama Depan" name="name" value="<?= $userdata->name; ?>">
 							</div>
 						</div>
 						<div class="form-group">

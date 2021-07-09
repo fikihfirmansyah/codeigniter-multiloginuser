@@ -81,7 +81,7 @@ CREATE TABLE `tbl_user` (
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `password_reset_key` varchar(100) DEFAULT NULL,
-  `first_name` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `phone` varchar(12) NOT NULL,
@@ -96,7 +96,7 @@ CREATE TABLE `tbl_user` (
 -- Dumping data for table `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`id`, `id_role`, `username`, `password`, `password_reset_key`, `first_name`, `last_name`, `email`, `phone`, `photo`, `activated`, `last_login`, `created_at`, `updated_at`) VALUES
+INSERT INTO `tbl_user` (`id`, `id_role`, `username`, `password`, `password_reset_key`, `name`, `last_name`, `email`, `phone`, `photo`, `activated`, `last_login`, `created_at`, `updated_at`) VALUES
 (1, 1, 'admin', '$2y$05$OA.OoeNHoEkbGGKazYqPU.UOaI5jmgro8x2pRSV56ClTWlDf0EEn2', '', 'SISTEM', 'ADMINISTRATOR', 'admin@administrator.com', '082370382008', '1625761991343.jpg', 1, '2021-07-08 21:31:06', '2021-07-08 23:53:53', NULL),
 (2, 2, 'member', '$2y$05$8GdJw3BVbmhN6x2t0MNise7O0xqLMCNAN1cmP6fkhy0DZl4SxB5iO', '', 'Cabang Brandan', 'Kota', 'fikihfirmansyah43@gmail.com', '082370382008', '1625763396205.jpg', 1, '2021-07-08 23:56:50', '2021-07-08 23:53:53', NULL),
 (5, 2, 'fikihfirmansyah43@qmail.id', '$2y$05$4GwizExaZIQivMmh7Uc1BOwe7cz177WlhqVql4BDUNuvwzO3P/UHC', NULL, '', '', 'fikihfirmansyah43@qmail.id', '', '', 0, NULL, '2021-07-08 23:58:01', NULL),

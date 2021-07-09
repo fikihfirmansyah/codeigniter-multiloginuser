@@ -15,7 +15,7 @@
             foreach ($persons as $person) { ?>
 				<tr>
 					<td class="text-center" text-align="center" vertical-align="middle" line-height="90px";><?= $no++ ?></td>
-					<td><?= $person->first_name ?></td>
+					<td><?= $person->name ?></td>
 					<td><?= $person->email ?></td>
 					<td><?= $person->phone ?></td>
 					<td><?php if($person->activated == "1"){ 
@@ -26,8 +26,8 @@
 					?>					
 					<td class="text-center" width="160px" text-align="center" vertical-align="middle" line-height="90px"; style="padding-left: 20px;">
 
-					<?php echo anchor('admin/person/edit/' . $person->id, '<button type="button" class="btn btn-block btn-warning btn-xs">Edit</button>'); ?> &nbsp
-					<?php echo anchor('admin/person/delete/' . $person->id, '<button type="button" class="btn btn-block btn-danger btn-xs">Delete</button>'); ?>
+					<?php echo anchor('admin/person/edit/' . $person->id, '<button type="button" class="btn btn-block btn-warning btn-xs" onClick=\'return confirm("are you sure you want to delete??");\'>Edit</button>'); ?> <br>
+					<?php echo anchor('admin/person/delete/' . $person->id, '<button type="button" class="btn btn-block btn-danger btn-xs"onClick=\'return confirm("are you sure you want to delete??");\'>Delete</button>'); ?>
 
 					</td>
 				</tr>

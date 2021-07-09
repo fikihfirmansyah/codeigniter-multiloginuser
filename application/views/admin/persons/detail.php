@@ -3,7 +3,7 @@
 	<tr>
 		<td>Name</td>
 		<td>:</td>
-		<td><?= $person->first_name ?></td>
+		<td><?= $person->name ?></td>
 	</tr>
 	<tr>
 		<td>email</td>

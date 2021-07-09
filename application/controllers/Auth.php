@@ -18,17 +18,15 @@ class Auth extends MY_Controller
 
     public function updateProfile()
     {
-        $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]|max_length[15]');
-        $this->form_validation->set_rules('first_name', 'Nama Depan', 'trim|required|min_length[2]|max_length[15]');
-        $this->form_validation->set_rules('last_name', 'Nama Belakang', 'trim|required|min_length[2]|max_length[15]');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|min_length[8]|max_length[50]');
-        $this->form_validation->set_rules('phone', 'Telp', 'trim|required|min_length[11]|max_length[12]');
+        $this->form_validation->set_rules('name', 'Nama Lengkap', 'trim|required|min_length[5]|max_length[100]');
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[50]');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|min_length[5]|max_length[50]');
+        $this->form_validation->set_rules('phone', 'Nomor HP', 'trim|required|numeric|min_length[5]|max_length[15]');
 
         $id = $this->session->userdata('id');
         $data = array(
             'username' => $this->input->post('username'),
-            'first_name' => $this->input->post('first_name'),
-            'last_name' => $this->input->post('last_name'),
+                'name' => $this->input->post('name'),
             'email' => $this->input->post('email'),
             'phone' => $this->input->post('phone'),
         );
@@ -119,9 +117,13 @@ class Auth extends MY_Controller
     public function check_register()
     {
         $data = konfigurasi('Register');
+        $this->form_validation->set_rules('name', 'Nama Lengkap', 'trim|required|min_length[5]|max_length[100]');
         $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[50]');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|min_length[5]|max_length[50]');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|min_length[5]|max_length[50]');
+        $this->form_validation->set_rules('phone', 'Nomor HP', 'trim|required|numeric|min_length[5]|max_length[15]');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[5]|max_length[50]');
+        $this->form_validation->set_rules('konfirmasi_password', 'Konfirmasi Password', 'required|min_length[5]|matches[password]');
+
         if ($this->form_validation->run() == false) {
             $this->register();
         } else {
@@ -190,8 +192,8 @@ class Auth extends MY_Controller
               'password'    => $query->password,
               'id_role'     => $query->id_role,
               'username'    => $query->username,
-              'first_name'  => $query->first_name,
-              'last_name'   => $query->last_name,
+              'name'  => $query->name,
+              'role_name'  => $query->role_name,
               'email'       => $query->email,
               'phone'       => $query->phone,
               'photo'       => $query->photo,
