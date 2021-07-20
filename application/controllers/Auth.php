@@ -19,6 +19,8 @@ class Auth extends MY_Controller
     public function updateProfile()
     {
         $this->form_validation->set_rules('name', 'Nama Lengkap', 'trim|required|min_length[5]|max_length[100]');
+        $this->form_validation->set_rules('nipp', 'NIPP', 'trim|required|min_length[5]|max_length[100]');
+        $this->form_validation->set_rules('branch', 'Branch', 'trim|required|min_length[5]|max_length[100]');
         $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[50]');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|min_length[5]|max_length[50]');
         $this->form_validation->set_rules('phone', 'Nomor HP', 'trim|required|numeric|min_length[5]|max_length[15]');
@@ -27,6 +29,8 @@ class Auth extends MY_Controller
         $data = array(
             'username' => $this->input->post('username'),
                 'name' => $this->input->post('name'),
+                'nipp' => $this->input->post('nipp'),
+                'branch' => $this->input->post('branch'),
             'email' => $this->input->post('email'),
             'phone' => $this->input->post('phone'),
         );
@@ -118,6 +122,8 @@ class Auth extends MY_Controller
     {
         $data = konfigurasi('Register');
         $this->form_validation->set_rules('name', 'Nama Lengkap', 'trim|required|min_length[5]|max_length[100]');
+        $this->form_validation->set_rules('nipp', 'NIPP', 'trim|required|min_length[5]|max_length[100]');
+        $this->form_validation->set_rules('branch', 'Branch', 'trim|required|min_length[5]|max_length[100]');
         $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[50]');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|min_length[5]|max_length[50]');
         $this->form_validation->set_rules('phone', 'Nomor HP', 'trim|required|numeric|min_length[5]|max_length[15]');
@@ -193,6 +199,8 @@ class Auth extends MY_Controller
               'id_role'     => $query->id_role,
               'username'    => $query->username,
               'name'  => $query->name,
+              'nipp'  => $query->nipp,
+              'branch'  => $query->branch,
               'role_name'  => $query->role_name,
               'email'       => $query->email,
               'phone'       => $query->phone,

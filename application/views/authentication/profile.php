@@ -16,6 +16,9 @@
 					<li class="list-group-item" style="text-align:center">
 						<b>Username</b><br><a><?= $userdata->username; ?></a>
 					</li>
+										<li class="list-group-item" style="text-align:center">
+						<b>Cabang</b><br><a><?= $userdata->branch; ?></a>
+					</li>
 					<li class="list-group-item" style="text-align:center">
 						<b>Tanggal Daftar</b><br><a><?= tgl_lengkap($userdata->created_at);?></a>
 					</li>
@@ -45,7 +48,13 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label">Nama Lengkap</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" placeholder="Nama Depan" name="name" value="<?= $userdata->name; ?>">
+								<input type="text" class="form-control" placeholder="Nama Lengkap" name="name" value="<?= $userdata->name; ?>">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">NIPP</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" placeholder="NIPP" name="nipp" value="<?= $userdata->nipp; ?>">
 							</div>
 						</div>
 						<div class="form-group">

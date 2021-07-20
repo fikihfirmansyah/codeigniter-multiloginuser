@@ -15,6 +15,38 @@
 		</tr>
 		<tr>
 		<div class="form-group">
+                    <label for="exampleInputNIPP1">NIPP</label>
+                    <input type="text" class="form-control" id="exampleInputNIPP1" placeholder="Masukkan NIPP" name="nipp" value="<?= $person->nipp ?>">
+                  </div>
+		</tr>
+		<tr>
+		<div class="form-group">
+                    <label for="exampleInputNIPP1">NIPP</label>
+					<select type="text" name="branch" class="form-control" required placeholder="Branch" value="<?= $person->branch ?>">
+			<span class="glyphicon glyphicon-user form-control-feedback"></span>
+			<option value="Kantor Pusat">Kantor Pusat</option>
+			<option value="Belawan">Belawan</option>
+			<option value="Dumai">Dumai</option>
+			<option value="TPK Belawan">TPK Belawan</option>
+			<option value="Tanjung Pinang">Tanjung Pinang</option>
+			<option value="Pekan Baru">Pekan Baru</option>
+			<option value="Tanjung Balai Karimun">Tanjung Balai Karimun</option>
+			<option value="Kuala Tanjung">Kuala Tanjung</option>
+			<option value="Batam">Batam</option>
+			<option value="Sei Pakning">Sei Pakning</option>
+			<option value="Sibolga">Sibolga</option>
+			<option value="Malahayati">Malahayati</option>
+			<option value="Lhokseumawe">Lhokseumawe</option>
+			<option value="Tanjung Balai Asahan">Tanjung Balai Asahan</option>
+			<option value="Gunung Sitoli">Gunung Sitoli</option>
+			<option value="Unit Galangan Kapal">Unit Galangan Kapal</option>
+		</select>                  </div>
+		</tr>
+
+			<?php echo form_error('branch','<div class="text-danger"><small>','</small></div>') ;?>
+		</div>
+		<tr>
+		<div class="form-group">
                     <label for="exampleInputEmail1">Email	</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Email" name="email" value="<?= $person->email ?>">
                   </div>

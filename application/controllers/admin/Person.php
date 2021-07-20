@@ -29,6 +29,8 @@ class Person extends MY_Controller
     public function create()
     {
         $name    = $this->input->post('name');
+        $nipp    = $this->input->post('nipp');
+        $branch    = $this->input->post('branch');
         $email = $this->input->post('email');
         $phone = $this->input->post('phone');
         $photo = $this->input->post('photo');
@@ -36,6 +38,8 @@ class Person extends MY_Controller
 
         $data = [
             'name'    => $name,
+            'nipp'    => $nipp,
+            'branch'    => $branch,
             'email' => $email,
             'phone' => $phone,
             'photo' => $photo,
@@ -59,6 +63,8 @@ class Person extends MY_Controller
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         $name = $this->input->post('name');
+        $nipp = $this->input->post('nipp');
+        $branch = $this->input->post('branch');
         $email = $this->input->post('email');
         $phone = $this->input->post('phone');
         $photo = $this->input->post('photo');
@@ -66,6 +72,8 @@ class Person extends MY_Controller
 
         $data = [
             'name'    => $name,
+            'nipp'    => $nipp,
+            'branch'    => $branch,
             'email' => $email,
             'phone' => $phone,
             'photo' => $photo,

@@ -6,6 +6,11 @@
 		<td><?= $person->name ?></td>
 	</tr>
 	<tr>
+		<td>NIPP</td>
+		<td>:</td>
+		<td><?= $person->nipp ?></td>
+	</tr>
+	<tr>
 		<td>email</td>
 		<td>:</td>
 		<td><?= $person->email ?></td>

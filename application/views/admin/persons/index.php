@@ -5,6 +5,8 @@
 				<th class="text-center" width="30px" style="padding-left: 20px;">No</th>
 				<th>Username</th>
 				<th>Nama</th>
+				<th>NIPP</th>
+				<th>Cabang</th>
 				<th>Email</th>
 				<th>Nomor HP</th>
 				<th>Status</th>
@@ -18,6 +20,8 @@
 					<td class="text-center" text-align="center" vertical-align="middle" line-height="90px";><?= $no++ ?></td>
 					<td><?= $person->username ?></td>
 					<td><?= $person->name ?></td>
+					<td><?= $person->nipp ?></td>
+					<td><?= $person->branch ?></td>
 					<td><?= $person->email ?></td>
 					<td><?= $person->phone ?></td>
 					<td><?php if($person->activated == "1"){ 

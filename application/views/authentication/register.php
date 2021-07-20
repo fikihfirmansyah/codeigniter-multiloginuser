@@ -1,8 +1,7 @@
 <div class="register-box">
 	<div class="register-logo">
-	<img width="64" src="<?php echo base_url() ;?>/assets\uploads\images\<?php echo $site['logo']?>" /><br>
-
-		<a href="<?php echo base_url() ;?>"><b><?php echo $site['nama_website']; ?></b></a>
+	<img width="256" src="<?php echo base_url() ;?>/assets\uploads\images\<?php echo $site['logo']?>" /><br>
+		<!-- /.login-logo <a href="<?php echo base_url(); ?>"><b><?php echo $site['nama_website']?></b></a>-->
 	</div>
 
 	<div class="register-box-body">
@@ -12,6 +11,34 @@
 			<input type="text" name="name" class="form-control" required placeholder="Nama Lengkap">
 			<span class="glyphicon glyphicon-user form-control-feedback"></span>
 			<?php echo form_error('name','<div class="text-danger"><small>','</small></div>') ;?>
+		</div>
+		<div class="form-group has-feedback">
+			<input type="text" name="nipp" class="form-control" required placeholder="NIPP">
+			<span class="glyphicon glyphicon-user form-control-feedback"></span>
+			<?php echo form_error('nipp','<div class="text-danger"><small>','</small></div>') ;?>
+		</div>
+
+		<div class="form-group has-feedback">
+			<select type="text" name="branch" class="form-control" required placeholder="Branch">
+			<span class="glyphicon glyphicon-user form-control-feedback"></span>
+			<option value="Kantor Pusat">Kantor Pusat</option>
+			<option value="Belawan">Belawan</option>
+			<option value="Dumai">Dumai</option>
+			<option value="TPK Belawan">TPK Belawan</option>
+			<option value="Tanjung Pinang">Tanjung Pinang</option>
+			<option value="Pekan Baru">Pekan Baru</option>
+			<option value="Tanjung Balai Karimun">Tanjung Balai Karimun</option>
+			<option value="Kuala Tanjung">Kuala Tanjung</option>
+			<option value="Batam">Batam</option>
+			<option value="Sei Pakning">Sei Pakning</option>
+			<option value="Sibolga">Sibolga</option>
+			<option value="Malahayati">Malahayati</option>
+			<option value="Lhokseumawe">Lhokseumawe</option>
+			<option value="Tanjung Balai Asahan">Tanjung Balai Asahan</option>
+			<option value="Gunung Sitoli">Gunung Sitoli</option>
+			<option value="Unit Galangan Kapal">Unit Galangan Kapal</option>
+		</select>
+			<?php echo form_error('branch','<div class="text-danger"><small>','</small></div>') ;?>
 		</div>
 		<div class="form-group has-feedback">
 			<input type="text" name="username" class="form-control" required placeholder="Username">
