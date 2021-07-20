@@ -9,16 +9,13 @@ class Rapor extends MY_Controller
 		parent::__construct();
 		$this->load->model('RaporModel');
 		$this->check_login();
-		if ($this->session->userdata('id_role') != '2') {
-			redirect('', 'refresh');
-		}
 	}
 
 	public function index()
 	{
 		$data = konfigurasi('Rapor', 'Kelola Rapor');
 		$data['rapor'] = $this->RaporModel->view();
-		$this->template->load('layouts/template', 'member/rapor/view', $data);
+		$this->template->load('layouts/template', 'admin/rapor/view', $data);
 	}
 
 	public function form()
@@ -46,7 +43,7 @@ class Rapor extends MY_Controller
 				$data['upload_error'] = $upload['error']; // Ambil pesan error uploadnya untuk dikirim ke file form dan ditampilkan
 			}
 		}
-		$this->template->load('layouts/template', 'member/rapor/form', $data);
+		$this->template->load('layouts/template', 'admin/rapor/form', $data);
 	}
 
 
@@ -100,7 +97,7 @@ class Rapor extends MY_Controller
 		// Panggil fungsi insert_multiple yg telah kita buat sebelumnya di model
 		$this->RaporModel->insert_multiple($data);
 
-		redirect("member/rapor"); // Redirect ke halaman awal (ke controller rapor fungsi index)
+		redirect("admin/rapor"); // Redirect ke halaman awal (ke controller rapor fungsi index)
 	}
 	public function export()
 	{

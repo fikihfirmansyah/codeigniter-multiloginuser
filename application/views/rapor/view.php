@@ -1,7 +1,7 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-	<a href="<?php echo base_url("member/rapor/form"); ?>" class="btn btn-info">UPLOAD DATA</a>
-	<a href="<?php echo base_url("member/rapor/export"); ?>" class="btn btn-info">EXSPORT DATA</a>
+	<a href="<?php echo base_url("rapor/form"); ?>" class="btn btn-info">UPLOAD DATA</a>
+	<a href="<?php echo base_url("rapor/export"); ?>" class="btn btn-info">EXSPORT DATA</a>
 
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
@@ -44,13 +44,13 @@
 					<tr>
 
 						<th><?php echo $data->cabang ?></th>
-						<td><?php echo $data->nilai_amanah ?></td>
-						<td><?php echo $data->nilai_kompeten ?></td>
-						<td><?php echo $data->nilai_harmonis ?></td>
-						<td><?php echo $data->nilai_loyal ?></td>
-						<td><?php echo $data->nilai_adaptif ?></td>
-						<td><?php echo $data->nilai_kolab ?></td>
-						<td><?php echo $data->nilai_total ?></td>
+						<td><?php echo $data->nilai_amanah . '%' ?></td>
+						<td><?php echo $data->nilai_kompeten . '%' ?></td>
+						<td><?php echo $data->nilai_harmonis . '%' ?></td>
+						<td><?php echo $data->nilai_loyal . '%' ?></td>
+						<td><?php echo $data->nilai_adaptif . '%' ?></td>
+						<td><?php echo $data->nilai_kolab . '%' ?></td>
+						<td><?php echo $data->nilai_total . '%' ?></td>
 						<td><?php echo $data->created_at ?></td>
 					</tr>
 

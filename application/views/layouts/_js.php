@@ -2,9 +2,6 @@
 <script src="<?php echo base_url('assets'); ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url('assets'); ?>/vendor/iCheck/icheck.min.js"></script>
 <script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-2.4.3/js/adminlte.min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-2.4.3/js/adminlte.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.js"></script>
-
 <script>
 	window.onload = function() {
 		<?php if ($this->session->flashdata('msg') != '') {
@@ -29,8 +26,6 @@
 
 <!-- jQuery 3 -->
 <script src="<?php echo base_url('assets'); ?>/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="<?php echo base_url('assets'); ?>/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- DataTables -->
 <script src="<?php echo base_url('assets'); ?>/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="<?php echo base_url('assets'); ?>/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -60,31 +55,4 @@
 	$(document).ready(function() {
 		$('#table1').DataTable()
 	})
-</script>
-<script>
-	var ctx = document.getElementById('myChart').getContext('2d');
-	var chart = new Chart(ctx, {
-		// The type of chart we want to create
-		type: 'bar',
-		// The data for our dataset
-		data: {
-			labels: [<?php echo $nama_cabang; ?>],
-			datasets: [{
-				label: 'Data Jurusan Mahasiswa ',
-				backgroundColor: ['rgb(255, 99, 132)', 'rgba(56, 86, 255, 0.87)', 'rgb(60, 179, 113)', 'rgb(175, 238, 239)'],
-				borderColor: ['rgb(255, 99, 132)'],
-				data: [<?php echo $jumlah; ?>]
-			}]
-		},
-		// Configuration options go here
-		options: {
-			scales: {
-				yAxes: [{
-					ticks: {
-						beginAtZero: true
-					}
-				}]
-			}
-		}
-	});
 </script>

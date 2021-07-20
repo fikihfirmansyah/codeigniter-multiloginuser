@@ -1,29 +1,29 @@
 <div class="msg" style="display:none;">
-    <?= @$this->session->flashdata('msg'); ?>
+	<?= @$this->session->flashdata('msg'); ?>
 </div>
 <div class="row">
 	<div class="col-md-3">
 		<!-- Profile Image -->
 		<div class="box box-primary">
 			<div class="box-body box-profile">
-				<img class="profile-user-img img-responsive img-circle" src="<?= base_url('assets/uploads/images/foto_profil/'.$userdata->photo); ?>" style="width:125px; height:125px">
+				<img class="profile-user-img img-responsive img-circle" src="<?= base_url('assets/uploads/images/foto_profil/' . $userdata->photo); ?>" style="width:125px; height:125px">
 
 				<h3 class="profile-username text-center"><?= $userdata->name; ?></h3>
 
-				<p class="text-muted text-center"><?= $userdata->role_name;?></p>
+				<p class="text-muted text-center"><?= $userdata->role_name; ?></p>
 
 				<ul class="list-group list-group-unbordered">
 					<li class="list-group-item" style="text-align:center">
 						<b>Username</b><br><a><?= $userdata->username; ?></a>
 					</li>
-										<li class="list-group-item" style="text-align:center">
+					<li class="list-group-item" style="text-align:center">
 						<b>Cabang</b><br><a><?= $userdata->branch; ?></a>
 					</li>
 					<li class="list-group-item" style="text-align:center">
-						<b>Tanggal Daftar</b><br><a><?= tgl_lengkap($userdata->created_at);?></a>
+						<b>Tanggal Daftar</b><br><a><?= tgl_lengkap($userdata->created_at); ?></a>
 					</li>
 					<li class="list-group-item" style="text-align:center">
-						<b>Terakhir Login</b><br><a><?= tgl_lengkap($userdata->last_login);?></a>
+						<b>Terakhir Login</b><br><a><?= tgl_lengkap($userdata->last_login); ?></a>
 					</li>
 				</ul>
 			</div>

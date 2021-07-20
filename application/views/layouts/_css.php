@@ -41,3 +41,18 @@ folder instead of downloading all of them to reduce the load. -->
 
 <!-- Google Font -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+<style>
+  #tble th {
+    text-align: left;
+    background-color: green;
+    color: white;
+  }
+
+  table {
+    display: block;
+    border: 1px solid;
+    margin-top: 10px;
+    overflow-x: scroll;
+
+  }
+</style>

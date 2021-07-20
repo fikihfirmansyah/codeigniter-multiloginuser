@@ -1,10 +1,10 @@
 <div overflow="auto">
   <h1>Upload Data</h1>
-  <form method="post" class="form-inline" action="<?php echo base_url("member/rapor/form"); ?>" enctype="multipart/form-data">
+  <form method="post" class="form-inline" action="<?php echo base_url("rapor/form"); ?>" enctype="multipart/form-data">
     <div class="form-group mb-2">
       <br>
 
-      <h5<strong><a href="<?php echo base_url("excel/Temp _ Rapot Akhlak.xlsx"); ?>">Download Format</a> | | <a href="<?php echo base_url("member/rapor/"); ?>">Kembali</a></strong></small>
+      <h5<strong><a href="<?php echo base_url("excel/Temp _ Rapot Akhlak.xlsx"); ?>">Download Format</a> | | <a href="<?php echo base_url("rapor/"); ?>">Kembali</a></strong></small>
         <br> <br> <input type="file" class="form-control-file" id="file" name="file">
 
     </div>
@@ -21,7 +21,7 @@
     }
 
     // Buat sebuah tag form untuk proses import data ke database
-    echo "<form method='post' action='" . base_url("member/rapor/import") . "'>";
+    echo "<form method='post' action='" . base_url("rapor/import") . "'>";
 
     // Buat sebuah div untuk alert validasi kosong
     echo "<div style='color: red;' id='kosong'>
@@ -184,7 +184,7 @@
       // Buat sebuah tombol untuk mengimport data ke database
       echo "<button type='submit' class='btn btn-info' name='import'>process</button>";
       echo "&nbsp;";
-      echo "<a href='" . base_url("member/rapor/") . "' class='btn btn-dark'>Cancel</a>";
+      echo "<a href='" . base_url("rapor/") . "' class='btn btn-dark'>Cancel</a>";
     }
 
     echo "</form>";
