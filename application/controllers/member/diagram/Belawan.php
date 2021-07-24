@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 
-class Home extends MY_Controller
+class Belawan extends MY_Controller
 {
     public function __construct()
     {
@@ -20,6 +20,8 @@ class Home extends MY_Controller
     {
 
         $data = konfigurasi('Dashboard');
-        $this->template->load('layouts/template', 'member/dashboard', $data);
+        $data1 = $this->DiagramModel->belawan();
+        $data['data'] = json_encode($data1);
+        $this->template->load('layouts/template', 'member/diagram/belawan', $data);
     }
 }
