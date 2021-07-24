@@ -50,7 +50,7 @@ folder instead of downloading all of them to reduce the load. -->
 
   table {
     display: block;
-    border: 1px solid;
+    border: 1px transparent;
     margin-top: 10px;
     overflow-x: scroll;
 
