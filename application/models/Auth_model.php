@@ -17,9 +17,9 @@ class Auth_model extends CI_Model
         $this->db->where($this->id, $id);
         $this->db->update($this->table, $data);
         return $this->db->affected_rows();
-	}
-	
-	public function get_by_id()
+    }
+
+    public function get_by_id()
     {
         $id = $this->session->userdata('id');
         $this->db->select('tbl_user.*, tbl_role.id AS id_role, tbl_role.name AS role_name, tbl_role.description,');
@@ -33,25 +33,25 @@ class Auth_model extends CI_Model
 
     public function reg()
     {
-      date_default_timezone_set('ASIA/JAKARTA');
-      $data = array(
-        'name' => $this->input->post('name'),
-        'nipp' => $this->input->post('nipp'),
-        'branch' => $this->input->post('branch'),
-        'username' => $this->input->post('username'),
-        'email' => $this->input->post('email'),
-        'phone' => $this->input->post('phone'),
-        'photo' =>  '1625761991343.jpg',
-        'id_role' => '2',
-        'created_at' => date('Y-m-d H:i:s'),
-        'password' => get_hash($this->input->post('password'))
-      );
-      return $this->db->insert($this->table, $data);
+        date_default_timezone_set('ASIA/JAKARTA');
+        $data = array(
+            'name' => $this->input->post('name'),
+            'nipp' => $this->input->post('nipp'),
+            'branch' => $this->input->post('branch'),
+            'username' => $this->input->post('username'),
+            'email' => $this->input->post('email'),
+            'phone' => $this->input->post('phone'),
+            'photo' =>  '1625761991343.jpg',
+            'id_role' => '2',
+            'created_at' => date('Y-m-d H:i:s'),
+            'password' => get_hash($this->input->post('password'))
+        );
+        return $this->db->insert($this->table, $data);
     }
 
     public function login($email, $password)
     {
-        $query = $this->db->get_where($this->table, array('email'=>$email, 'password'=>$password));
+        $query = $this->db->get_where($this->table, array('email' => $email, 'password' => $password));
         return $query->row_array();
     }
 

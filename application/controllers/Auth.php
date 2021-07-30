@@ -1,4 +1,4 @@
-<?php 
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends MY_Controller
@@ -28,9 +28,9 @@ class Auth extends MY_Controller
         $id = $this->session->userdata('id');
         $data = array(
             'username' => $this->input->post('username'),
-                'name' => $this->input->post('name'),
-                'nipp' => $this->input->post('nipp'),
-                'branch' => $this->input->post('branch'),
+            'name' => $this->input->post('name'),
+            'nipp' => $this->input->post('nipp'),
+            'branch' => $this->input->post('branch'),
             'email' => $this->input->post('email'),
             'phone' => $this->input->post('phone'),
         );
@@ -40,8 +40,8 @@ class Auth extends MY_Controller
 
                 //delete file
                 $user = $this->Auth_model->get_by_id($this->session->userdata('id'));
-                if (file_exists('assets/uploads/images/foto_profil/'.$user->photo) && $user->photo) {
-                    unlink('assets/uploads/images/foto_profil/'.$user->photo);
+                if (file_exists('assets/uploads/images/foto_profil/' . $user->photo) && $user->photo) {
+                    unlink('assets/uploads/images/foto_profil/' . $user->photo);
                 }
 
                 $data['photo'] = $upload;
@@ -122,10 +122,35 @@ class Auth extends MY_Controller
     {
         $data = konfigurasi('Register');
         $this->form_validation->set_rules('name', 'Nama Lengkap', 'trim|required|min_length[5]|max_length[100]');
-        $this->form_validation->set_rules('nipp', 'NIPP', 'trim|required|min_length[5]|max_length[100]');
+        $this->form_validation->set_rules(
+            'nipp',
+            'NIPP',
+            'trim|required|valid_email|min_length[5]|max_length[50]|is_unique[tbl_user.nipp]',
+            array(
+                'required'      => 'Kamu harus mengisi NIPP.',
+                'is_unique'     => 'NIPP sudah digunakan.'
+            )
+        );
         $this->form_validation->set_rules('branch', 'Branch', 'trim|required|min_length[5]|max_length[100]');
-        $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[50]');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|min_length[5]|max_length[50]');
+
+        $this->form_validation->set_rules(
+            'username',
+            'Username',
+            'required|min_length[5]|max_length[50]|is_unique[tbl_user.username]',
+            array(
+                'required'      => 'Kamu harus mengisi Username.',
+                'is_unique'     => 'Username sudah digunakan.'
+            )
+        );
+        $this->form_validation->set_rules(
+            'email',
+            'Email',
+            'trim|required|valid_email|min_length[5]|max_length[50]|is_unique[tbl_user.email]',
+            array(
+                'required'      => 'Kamu harus mengisi Email.',
+                'is_unique'     => 'Email sudah digunakan.'
+            )
+        );
         $this->form_validation->set_rules('phone', 'Nomor HP', 'trim|required|numeric|min_length[5]|max_length[15]');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[5]|max_length[50]');
         $this->form_validation->set_rules('konfirmasi_password', 'Konfirmasi Password', 'required|min_length[5]|matches[password]');
@@ -169,7 +194,9 @@ class Auth extends MY_Controller
         			</p>
             ');
         } elseif ($query === 2) {
-            $this->session->set_flashdata('alert','<p class="box-msg">
+            $this->session->set_flashdata(
+                'alert',
+                '<p class="box-msg">
               <div class="info-box alert-warning">
               <div class="info-box-icon">
               <i class="fa fa-info-circle"></i>
@@ -193,21 +220,21 @@ class Auth extends MY_Controller
         } else {
             //membuat session dengan nama userData yang artinya nanti data ini bisa di ambil sesuai dengan data yang login
             $userdata = array(
-              'is_login'    => true,
-              'id'          => $query->id,
-              'password'    => $query->password,
-              'id_role'     => $query->id_role,
-              'username'    => $query->username,
-              'name'  => $query->name,
-              'nipp'  => $query->nipp,
-              'branch'  => $query->branch,
-              'role_name'  => $query->role_name,
-              'email'       => $query->email,
-              'phone'       => $query->phone,
-              'photo'       => $query->photo,
-              'last_login'  => $query->last_login,
-              'created_at'  => $query->created_at,
-              'updated_at'  => $query->updated_at,
+                'is_login'    => true,
+                'id'          => $query->id,
+                'password'    => $query->password,
+                'id_role'     => $query->id_role,
+                'username'    => $query->username,
+                'name'  => $query->name,
+                'nipp'  => $query->nipp,
+                'branch'  => $query->branch,
+                'role_name'  => $query->role_name,
+                'email'       => $query->email,
+                'phone'       => $query->phone,
+                'photo'       => $query->photo,
+                'last_login'  => $query->last_login,
+                'created_at'  => $query->created_at,
+                'updated_at'  => $query->updated_at,
             );
             $this->session->set_userdata($userdata);
             return true;
@@ -251,12 +278,12 @@ class Auth extends MY_Controller
         date_default_timezone_set('ASIA/JAKARTA');
         $date = array('last_login' => date('Y-m-d H:i:s'));
         $id = $this->session->userdata('id');
-		$this->Auth_model->logout($date, $id);
-		$user_data = $this->session->userdata();
-		foreach ($user_data as $key => $value) {
-			if ($key!='__ci_last_regenerate' && $key != '__ci_vars')
-			$this->session->unset_userdata($key);
-		}
+        $this->Auth_model->logout($date, $id);
+        $user_data = $this->session->userdata();
+        foreach ($user_data as $key => $value) {
+            if ($key != '__ci_last_regenerate' && $key != '__ci_vars')
+                $this->session->unset_userdata($key);
+        }
         $this->session->set_flashdata('alert', '<p class="box-msg">
               <div class="info-box alert-success">
               <div class="info-box-icon">

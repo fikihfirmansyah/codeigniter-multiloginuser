@@ -12,8 +12,50 @@
                 <div id="batam"></div>
 
             </div>
+
         </div>
     </div>
+
+    <br>
+    <!-- Main content -->
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Nilai Amanah</th>
+                <th>Nilai Kompeten</th>
+                <th>Nilai Harmonis</th>
+                <th>Nilai Loyal</th>
+                <th>Nilai Adaptif</th>
+                <th>Nilai Kolab</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+                <th>
+                    <div class="amanah"></div>
+                </th>
+                <th>
+                    <div class="kompeten"></div>
+                </th>
+                <th>
+                    <div class="harmonis"></div>
+                </th>
+                <th>
+                    <div class="loyal"></div>
+                </th>
+                <th>
+                    <div class="adaptif"></div>
+                </th>
+                <th>
+                    <div class="kolab"></div>
+                </th>
+            </tr>
+
+
+        </tbody>
+    </table>
     <script src="<?php echo base_url() . 'assets/js/jquery.min.js' ?>"></script>
     <script src="<?php echo base_url() . 'assets/js/raphael-min.js' ?>"></script>
     <script src="<?php echo base_url() . 'assets/js/morris.min.js' ?>"></script>
@@ -22,8 +64,8 @@
         Morris.Bar({
             element: 'batam',
             data: <?php echo $data; ?>,
-            xkey: 'cabang',
-            ykeys: ['nilai_amanah', 'nilai_kompeten', 'nilai_harmonis', 'nilai_loyal', 'nilai_adaptif', 'nilai_kolab', 'nilai_total'],
+            xkey: 'created_at',
+            ykeys: ['nilai_amanah', 'nilai_kompeten', 'nilai_harmonis', 'nilai_loyal', 'nilai_adaptif', 'nilai_kolab'],
             labels: ['Nilai Amanah', 'Nilai Kompeten', 'Nilai Harmonis', 'Nilai Loyal', 'Nilai Adaptif', 'Nilai Kolab', 'Nilai Total'],
             hideHover: true,
             grid: true,

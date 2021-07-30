@@ -1,7 +1,7 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-	<a href="<?php echo base_url("rapor/form"); ?>" class="btn btn-info">UPLOAD DATA</a>
-	<a href="<?php echo base_url("rapor/export"); ?>" class="btn btn-info">EXSPORT DATA</a>
+	<a href="<?php echo base_url("rapor/form"); ?>" class="btn btn-info">UNGGAH DATA</a>
+	<a href="<?php echo base_url("rapor/export"); ?>" class="btn btn-info">REKAP DATA</a>
 
 	<!-- Content Header (Page header) -->
 	<section class="content-header">

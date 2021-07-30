@@ -76,4 +76,40 @@ folder instead of downloading all of them to reduce the load. -->
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+
+  .amanah {
+    height: 50px;
+    width: 50px;
+    background-color: #0b62a4;
+  }
+
+  .kompeten {
+    height: 50px;
+    width: 50px;
+    background-color: #7a92a3;
+  }
+
+  .harmonis {
+    height: 50px;
+    width: 50px;
+    background-color: #4da74d;
+  }
+
+  .loyal {
+    height: 50px;
+    width: 50px;
+    background-color: #afd8f8;
+  }
+
+  .adaptif {
+    height: 50px;
+    width: 50px;
+    background-color: #edc240;
+  }
+
+  .kolab {
+    height: 50px;
+    width: 50px;
+    background-color: #cb4b4b;
+  }
 </style>

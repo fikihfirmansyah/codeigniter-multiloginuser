@@ -1,5 +1,5 @@
 <div overflow="auto">
-  <h1>Upload Data</h1>
+  <h1>UNGGAH DATA</h1>
   <form method="post" class="form-inline" action="<?php echo base_url("rapor/form"); ?>" enctype="multipart/form-data">
     <div class="form-group mb-2">
       <br>
