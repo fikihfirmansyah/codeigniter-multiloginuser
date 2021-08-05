@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 20, 2021 at 08:57 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 7.3.29
+-- Host: localhost:3306
+-- Generation Time: Aug 05, 2021 at 11:45 AM
+-- Server version: 10.3.29-MariaDB-cll-lve
+-- PHP Version: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pelindo`
+-- Database: `u4567123_pelindo`
 --
 
 -- --------------------------------------------------------
@@ -85,15 +86,7 @@ CREATE TABLE `tbl_rapor` (
 --
 
 INSERT INTO `tbl_rapor` (`no`, `cabang`, `temuan`, `nilai_amanah`, `level`, `tingkat`, `avail`, `util`, `nilai_kompeten`, `kaloborasi`, `nilai_harmonis`, `revenue`, `efisiensi`, `nilai_loyal`, `koreksi`, `modul`, `nilai_adaptif`, `realisasi_kpi`, `realisasi_pkm`, `nilai_kolab`, `nilai_total`, `created_at`) VALUES
-(93, 'Pekan Baru', 99.00, 12.00, 52.00, 53.00, 54.00, 55.00, 56.00, 57.00, 58.00, 59.00, 60.00, 61.00, 62.00, 63.00, 64.00, 65.00, 66.00, 67.00, 53.00, '2021-07-20 18:52:42'),
-(92, 'Pekan Baru', 99.00, 12.00, 52.00, 53.00, 54.00, 55.00, 56.00, 57.00, 58.00, 59.00, 60.00, 61.00, 62.00, 63.00, 64.00, 65.00, 66.00, 67.00, 53.00, '2021-07-20 18:17:55'),
-(91, 'Pekan Baru', 99.00, 12.00, 52.00, 53.00, 54.00, 55.00, 56.00, 57.00, 58.00, 59.00, 60.00, 61.00, 62.00, 63.00, 64.00, 65.00, 66.00, 67.00, 53.00, '2021-07-20 17:54:50'),
-(89, 'Belawan', 99.00, 99.00, 52.00, 53.00, 54.00, 55.00, 56.00, 57.00, 58.00, 59.00, 60.00, 61.00, 62.00, 63.00, 64.00, 65.00, 66.00, 67.00, 67.50, '2021-07-20 17:48:44'),
-(88, 'Belawan', 99.00, 51.00, 52.00, 53.00, 54.00, 55.00, 56.00, 57.00, 58.00, 59.00, 60.00, 61.00, 62.00, 63.00, 64.00, 65.00, 66.00, 67.00, 59.50, '2021-07-20 17:48:18'),
-(87, 'Belawan', 51.00, 51.00, 52.00, 53.00, 54.00, 55.00, 56.00, 57.00, 58.00, 59.00, 60.00, 61.00, 62.00, 63.00, 64.00, 65.00, 66.00, 67.00, 59.50, '2021-07-20 17:48:02'),
-(90, 'Pekan Baru', 99.00, 12.00, 52.00, 53.00, 54.00, 55.00, 56.00, 57.00, 58.00, 59.00, 60.00, 61.00, 62.00, 63.00, 64.00, 65.00, 66.00, 67.00, 53.00, '2021-07-20 17:49:40'),
-(84, 'Kantor Pusat', 50.00, 51.00, 52.00, 53.00, 54.00, 55.00, 56.00, 57.00, 58.00, 59.00, 60.00, 61.00, 62.00, 63.00, 64.00, 65.00, 66.00, 67.00, 59.50, '2021-07-20 17:40:50'),
-(85, 'Belawan', 51.00, 51.00, 52.00, 53.00, 54.00, 55.00, 56.00, 57.00, 58.00, 59.00, 60.00, 61.00, 62.00, 63.00, 64.00, 65.00, 66.00, 67.00, 59.50, '2021-07-20 17:46:57');
+(3, 'Batam', 100.00, 100.00, 52.00, 53.00, 54.00, 55.00, 56.00, 57.00, 58.00, 59.00, 60.00, 61.00, 62.00, 63.00, 64.00, 65.00, 66.00, 67.00, 67.67, '2021-07-30 04:20:08');
 
 -- --------------------------------------------------------
 
@@ -144,12 +137,11 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id`, `id_role`, `username`, `password`, `password_reset_key`, `name`, `nipp`, `email`, `branch`, `phone`, `photo`, `activated`, `last_login`, `created_at`, `updated_at`) VALUES
-(1, 1, 'admin', '$2y$05$OA.OoeNHoEkbGGKazYqPU.UOaI5jmgro8x2pRSV56ClTWlDf0EEn2', '', 'SISTEM', '', 'admin@administrator.com', '', '082370382008', '1625761991343.jpg', 1, '2021-07-21 01:56:54', '2021-07-08 23:53:53', NULL),
-(2, 2, 'member', '$2y$05$8GdJw3BVbmhN6x2t0MNise7O0xqLMCNAN1cmP6fkhy0DZl4SxB5iO', '', 'Vika', '12345567', 'member@member.com', 'Belawan', '082370382008', '1625763396206.jpg', 1, '2021-07-21 01:46:06', '2021-07-08 23:53:53', NULL),
-(3, 2, 'ffnart43@gmail.com', '$2y$05$JYolcc55zpAlcMzTj7P.UeIjQYsqF2k.Sb0geDxzoc7Cv5dBll1bG', NULL, 'fgergererter', '43242dsfs', 'ffnart43@gmail.com', '', '5252424234', '1625761991343.jpg', 0, NULL, '2021-07-19 21:52:59', NULL),
-(4, 2, 'eer3434', '$2y$05$OLffegIob0CAeZ/.GTj76OCypMYtiNW8JTg/vJQWUUQo53zXI6tjq', NULL, 'Fikih', '3324242fer', 'ffnart431@gmail.com', 'Belawan', '3432432', '1625761991343.jpg', 0, NULL, '2021-07-19 22:13:21', NULL),
-(5, 2, 'admin@a.g', '$2y$05$96Z1sMi4YeNXV4qfYY4DHOi8oYM9OVXUUScoBDw.klS/SOcdSyDpi', NULL, 'fikih', '45eferww', 'admin@a.g', 'Kantor Pusat', '32423342443', '', 1, '2021-07-20 09:25:13', '2021-07-20 09:14:41', NULL),
-(6, 2, '1234567', '$2y$05$P4knfJTeXWMYUGvb7tw7wunfGyWlmU.7sDr9RCFrjazzPk0ETijlO', NULL, 'Fikih', '1234567', '1234567@gmail.com', 'Kantor Pusat', '1234567', '', 1, NULL, '2021-07-20 23:06:29', NULL);
+(1, 1, 'admin', '$2y$05$OA.OoeNHoEkbGGKazYqPU.UOaI5jmgro8x2pRSV56ClTWlDf0EEn2', '', 'SISTEM', '', 'admin@administrator.com', '', '082370382008', '1625761991343.jpg', 1, '2021-07-30 09:44:57', '2021-07-08 23:53:53', NULL),
+(2, 2, 'member', '$2y$05$8GdJw3BVbmhN6x2t0MNise7O0xqLMCNAN1cmP6fkhy0DZl4SxB5iO', '', 'Vika', '12345567', 'member@member.com', 'Belawan', '082370382008', '1625763396206.jpg', 1, '2021-07-30 08:17:09', '2021-07-08 23:53:53', NULL),
+(7, 2, 'tarayesaa', '$2y$05$oNHSlC1Z9shVxFITNkbeLO86OTFpizKSoTS0NEAVT2pI3yu621cSW', NULL, 'Tara Pandhyta Yesa', '12345678', 'tyesaa07@gmail.com', 'Kantor Pusat', '081262666779', '', 1, '2021-07-30 09:40:22', '2021-07-21 16:34:32', NULL),
+(8, 2, 'member', '$2y$05$OiC19gW/veUu2DcH7GY0CuNKO8AcWBMf3BBjworbZdDiCNcGwqWu.', NULL, 'member', 'member', 'member@member.com', 'Kantor Pusat', '243452525', '1625761991343.jpg', 0, NULL, '2021-07-24 11:53:58', NULL),
+(9, 2, 'Aryakk', '$2y$05$FnNIjSSax1Mws8PFt9Rr2.SK/MGmB27HKRUefoPvsVMgVMZR3DUpO', NULL, 'Arya waranggana', '12121212121212', 'arya@pelindo.co.id', 'Kantor Pusat', '081262666779', '', 1, '2021-07-30 11:20:49', '2021-07-30 09:43:32', NULL);
 
 --
 -- Indexes for dumped tables
@@ -193,7 +185,7 @@ ALTER TABLE `tbl_konfigurasi`
 -- AUTO_INCREMENT for table `tbl_rapor`
 --
 ALTER TABLE `tbl_rapor`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_role`
@@ -205,7 +197,7 @@ ALTER TABLE `tbl_role`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
