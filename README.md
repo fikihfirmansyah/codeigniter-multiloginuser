@@ -1,26 +1,34 @@
-## Update 10 Juli
+## Update August 5 -- Final (Probably)
 
-- Tambah isian form untuk register
-- Tambah form validation buat nomor HP
-- Tambah konfirmasi sebelum menghapus akun lain
-- Tambah logo 
-- Perbaikan edit profil yang sebelumnya duplikat name_roles dengan name
-- Hapus nama belakang
+- Using Indonesian
+- Validate so that no two accounts are the same via a unique email and username
+- Additional diagrams, sort by branch, each data input is displayed (only in total)
+- Added Moral Report Report, displays all input data in a table and can be exported or imported (add more data)
+- Upload data, using the prepared excel template, you can download the template first
+- Etc.
 
+## Update July 10
+
+- Add a form to register
+- Add validation form for cellphone numbers
+- Add confirmation before deleting another account
+- Add logo
+- Fixed edit profiles that previously duplicated name_roles with name
+- Delete last name
 
 ## CodeIgniter + AdminLTE
 
-- Login, Register, Update Profile di CodeIgniter
-- Telah terintegrasi dengan Template AdminLTE-2.4.3
-- Multi user / multi login
-- Status untuk user yang aktif dan tidak aktif
-- Animasi saat password salah, akun tidak terdaftar, dan akun tidak aktif
-- Menggunakan keamanan hash untuk password
-- Manajemen layout untuk template sehingga lebih tertata dan rapi
-- Konfigurasi favicon, logo, dan informasi website dinamis
-- Penambahan MY_Controller untuk session cek login di setiap controller
-- Notifikasi saat berhasil mendaftar
-- Hash password ke database saat mendaftar
-- Pembuatan tanggal daftar secara otomatis
-- Update Profile dan Password
-- Efek notifikasi saat update password dan identitas pada profil
+- Login, Register, Update Profile on CodeIgniter
+- Has been integrated with Template AdminLTE-2.4.3
+- Multi-user / multi-login
+- Status for active and inactive users
+- Animation when the password is wrong, the account is not registered, and the account is inactive
+- Using hash security for passwords
+- Layout management for templates so that they are more organized and neat
+- Configure favicon, logo, and dynamic website information
+- Added MY_Controller for login check session on each controller
+- Notification on successful registration
+- Hash password to database when registering
+- Automatic list date generation
+- Update Profile and Password
+- Notification effect when updating password and identity on profile
